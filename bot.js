@@ -6,10 +6,10 @@ var outlook = require('./outlook.json');
 var feelslike = require('./feelslike.json');
 
 var T = new Twit({
-    consumer_key: 'VbKJBtdRZcBkkLcpHTumqG6c0',
-    consumer_secret: 'XxyvKU40919Euqpac6EJYuJX8pWlaom990EDiVNmIMyVVKiCJT',
-    access_token: '1492712125906751489-czCYDTqL6o5WGSW2YEmTL6COcD9waX',
-    access_token_secret: 'ehFCvuM02TYN0htmKIL1DQI5ttRRURLHytYBkoClGSzf1',
+    consumer_key: '...', // Aqui você coloca a sua chave da API
+    consumer_secret: '...', // Aqui você coloca a sua chave secreta da API
+    access_token: '...', // Aqui você coloca a sua chave do TOKEN
+    access_token_secret: '...', // Aqui você coloca a sua chave secreta do TOKEN
 });
 
 var paudalho = 'Paudalho, PE';
