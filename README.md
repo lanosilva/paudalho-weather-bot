@@ -51,16 +51,16 @@ Aqui estão os links para você avaliar os códigos originais (não que tenha mu
 Enfim estes são meus contatos caso você queira tirar alguma dúvida ou etc.
 
 ### Intagram
-    @laninhonutella
+* @laninhonutella: https://www.instagram.com/laninhonutella
 
 ### Twitter
-    @laninhonutella
+* @laninhonutella: https://twitter.com/laninhonutella
 
 ### GitHub
-    Hylan-Silva
+* Hylan-Silva: https://github.com/HylanSilva
 
 ### Email
-    hylansilva27@gmail.com
+* hylansilva27@gmail.com: https://hylansilva27@gmail.com
 
 ### Discord
-    Pai de Banho#1557 
+* Pai de Banho#1557 
