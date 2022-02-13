@@ -14,7 +14,7 @@ var T = new Twit({
 
 var paudalho = 'Paudalho, PE';
 
-setInterval(normal, 1000 * 60 * 60 * 3);
+setInterval(normal, 1080000);
 //setInterval(previsao, 1000*60*60*24);
 normal();
 //previsao();
