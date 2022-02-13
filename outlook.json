@@ -1,0 +1,34 @@
+{
+    "Partly Sunny": {
+        "translate": "Meio Calor",
+        "emoji": "⛅"
+    },
+    "Mostly Sunny": {
+        "translate": "Calorzinho main",
+        "emoji": "🌤️"
+    },
+    "Light Rain": {
+        "translate": "Chuvisco",
+        "emoji": "🌦️"
+    },
+    "Mostly Clear": {
+        "translate": "Calor do carai",
+        "emoji": "☀️"
+    },
+    "Partly Cloudy": {
+        "translate": "Vai chover",
+        "emoji": "🌥️"
+    },
+    "Rain Showers": {
+        "translate": "Vai cair um toró",
+        "emoji": "⛈️"
+    },
+    "Rain": {
+        "translate": "Toró do carai",
+        "emoji": "🌧️"
+    },
+    "Sunny": {
+        "translate": "Aquele sol gostosinho",
+        "emoji": "🌤️"
+    }
+}
