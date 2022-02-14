@@ -6,15 +6,15 @@ var outlook = require('./outlook.json');
 var feelslike = require('./feelslike.json');
 
 var T = new Twit({
-    consumer_key: 'VbKJBtdRZcBkkLcpHTumqG6c0', // Aqui você coloca a sua chave da API
-    consumer_secret: 'XxyvKU40919Euqpac6EJYuJX8pWlaom990EDiVNmIMyVVKiCJT', // Aqui você coloca a sua chave secreta da API
-    access_token: '1492712125906751489-czCYDTqL6o5WGSW2YEmTL6COcD9waX', // Aqui você coloca a sua chave do TOKEN
-    access_token_secret: 'ehFCvuM02TYN0htmKIL1DQI5ttRRURLHytYBkoClGSzf1', // Aqui você coloca a sua chave secreta do TOKEN
+    consumer_key: '...', // Aqui você coloca a sua chave da API
+    consumer_secret: '...', // Aqui você coloca a sua chave secreta da API
+    access_token: '...', // Aqui você coloca a sua chave do TOKEN
+    access_token_secret: '...', // Aqui você coloca a sua chave secreta do TOKEN
 });
 
 var paudalho = 'Paudalho, PE';
 
-setInterval(normal, 10800000);
+setInterval(normal, 10800000); // equivale há 3 horas
 //setInterval(previsao, 1000*60*60*24);
 normal();
 //previsao();
