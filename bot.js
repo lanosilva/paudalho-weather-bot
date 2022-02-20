@@ -183,9 +183,9 @@ function dayTime() {
         mes = month[12];
     }
 
-    if (t >= 5 && t < 12) {
+    if (t >= 5-3 && t < 12-3) {
         hora = timeday.MORNING;
-    } else if (t >= 12 && t < 18) {
+    } else if (t >= 12-3 && t < 18-3) {
         hora = timeday.AFTHERNOON;
     } else {
         hora = timeday.NIGHT;
