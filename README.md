@@ -7,6 +7,9 @@
 * Criei o arquivo `months.json`
 * Criei o arquivo `prewords.json`
 * Criei o arquivo `time.json`
+
+Também foram corrigidos alguns erros em relação ao servidor do HEROKU.
+
 ### O que há de novo ?
 Nova `function` chamada `timeDay` ela determina uma menssagem positiva
 e ultiliza dos aquivos `dayweek.json`, `months.json`, `prewords.json` e `time.json`
@@ -20,17 +23,20 @@ para criar textos legais e depois tweetar direto no canal das pessoas.
 * Modifiquei o arquivo `outlook.json`
 * Modifiquei o arquivo `bot.js`
 ### O que há de novo ?
-1- No arquivo feelslike.json: foram adicionados mais dois sentimentos
+1- No arquivo feelslike.json: foram adicionados mais dois sentimentos.
+
          { "ultra cold":"🥶 frio da porra", }
          { "ultra hot": "🔥 e é o inferno é ? " }
 
-2- No arquivo outlook.json: foi adicionado o `Mostly Cludy`
+2- No arquivo outlook.json: foi adicionado o `Mostly Cludy`.
+
         "Mostly Cloudy":{
         "translate": "Nuvemzinha main",
         "emoji": "☁️"
                         }
-                        
+
 3- No arquivo bot.js foram modificadas algumas `functions` para estar de acordo com a região.
+
         function sensacao(temp, feelslike) {
                  if (temp < 16)
                     return feelslike["ultra cold"];
@@ -46,7 +52,7 @@ para criar textos legais e depois tweetar direto no canal das pessoas.
                     return feelslike["very hot"];
                  if (temp > 35)
                     return feelslike["ultra hot"];
-}
+                    }
 
 ## Apresentação
 
