@@ -1,5 +1,52 @@
 # Paudalho Weather Bot
 
+## Atualização 2.0.5
+
+### O que mudou ?
+* Criei o arquivo `dayweek.json`
+* Criei o arquivo `months.json`
+* Criei o arquivo `prewords.json`
+* Criei o arquivo `time.json`
+### O que há de novo ?
+Nova `function` chamada `timeDay` ela determina uma menssagem positiva
+e ultiliza dos aquivos `dayweek.json`, `months.json`, `prewords.json` e `time.json`
+para criar textos legais e depois tweetar direto no canal das pessoas.
+
+
+## Atualização 2.0.0
+
+### O que mudou ?
+* Modifiquei o arqivo `feelslike.json`
+* Modifiquei o arquivo `outlook.json`
+* Modifiquei o arquivo `bot.js`
+### O que há de novo ?
+1- No arquivo feelslike.json: foram adicionados mais dois sentimentos
+         { "ultra cold":"🥶 frio da porra", }
+         { "ultra hot": "🔥 e é o inferno é ? " }
+
+2- No arquivo outlook.json: foi adicionado o `Mostly Cludy`
+        "Mostly Cloudy":{
+        "translate": "Nuvemzinha main",
+        "emoji": "☁️"
+                        }
+3- No arquivo bot.js foram modificadas algumas `functions` para estar de acordo com a região.
+        function sensacao(temp, feelslike) {
+                 if (temp < 16)
+                    return feelslike["ultra cold"];
+                 if (temp >= 16 && temp <= 20)
+                    return feelslike["very cold"];
+                 if (temp >= 16 && temp <= 20)
+                    return feelslike["cold"];
+                 if (temp > 20 && temp <= 25)
+                    return feelslike["ok"];
+                 if (temp > 25 && temp <= 30)
+                    return feelslike["hot"];
+                 if (temp > 31)
+                    return feelslike["very hot"];
+                 if (temp > 35)
+                    return feelslike["ultra hot"];
+}
+
 ## Apresentação
 
 Olá prazer em conhecer você! sou Hylan Silva, um aspirante a programador
@@ -19,7 +66,7 @@ PS: vou deixar o link para o github e as redes sociais do autor do código origi
 Na teoria ? Não! Mas na prática deu um trabalhinho sim, mas foi aquela diversão
 de fim de semana, gostei muito de ter trabalhado nele, aaaaaaaaaa #felicidades
 
-### Licença
+## Licença
 
 Bem este bot utiliza a licença, FOQQCEC de 10 de Janeiro de 2022.
 

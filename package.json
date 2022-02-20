@@ -1,6 +1,6 @@
 {
   "name": "paudalhoweatherbot",
-  "version": "1.0.0",
+  "version": "2.0.5",
   "description": "Um bot criado para dar a previsão do tempo em Paudalho-Pe",
   "main": "bot.js",
   "scripts": {

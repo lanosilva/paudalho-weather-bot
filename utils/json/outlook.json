@@ -19,6 +19,10 @@
         "translate": "Vai chover",
         "emoji": "🌥️"
     },
+    "Mostly Cloudy":{
+        "translate": "Nuvemzinha main",
+        "emoji": "☁️"
+    },
     "Rain Showers": {
         "translate": "Vai cair um toró",
         "emoji": "⛈️"
