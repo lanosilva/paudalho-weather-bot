@@ -33,6 +33,7 @@ setInterval(previsao, 86400000);// equivale há 24horas
 
 setInterval(dayTime, 86400000);// equivale há 24horas
 
+horaExata();
 dayTime();
 normal();
 previsao();
@@ -236,3 +237,11 @@ function dayTime() {
     return tweet(msg);
 }
 
+function horaExata(){
+    var today = new Date();
+    var hora = today.getHours();
+    var minuto = today.getMinutes();
+    var segundo = today.getSeconds();
+    var msg = hora +" "+minuto+" "+segundo
+    return tweet(msg);
+}
