@@ -29,6 +29,7 @@ para criar textos legais e depois tweetar direto no canal das pessoas.
         "translate": "Nuvemzinha main",
         "emoji": "☁️"
                         }
+                        
 3- No arquivo bot.js foram modificadas algumas `functions` para estar de acordo com a região.
         function sensacao(temp, feelslike) {
                  if (temp < 16)
