@@ -1,2 +1,5 @@
-node_modules/
+# dependecies
+/node_modules
+
+# misc
 .env
