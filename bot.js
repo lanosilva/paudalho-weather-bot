@@ -183,9 +183,9 @@ function dayTime() {
         mes = month[12];
     }
 
-    if (t >= 5-3 && t < 12-3) {
+    if (t >= 8 && t < 15) {
         hora = timeday.MORNING;
-    } else if (t >= 12-3 && t < 18-3) {
+    } else if (t >= 15 && t < 21) {
         hora = timeday.AFTHERNOON;
     } else {
         hora = timeday.NIGHT;
@@ -237,11 +237,11 @@ function dayTime() {
     return tweet(msg);
 }
 
-function horaExata(){
+function horaExata() {
     var today = new Date();
     var hora = today.getHours();
     var minuto = today.getMinutes();
     var segundo = today.getSeconds();
-    var msg = hora +" "+minuto+" "+segundo
+    var msg = hora + " " + minuto + " " + segundo
     return tweet(msg);
 }
