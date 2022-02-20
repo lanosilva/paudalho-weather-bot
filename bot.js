@@ -96,7 +96,7 @@ function sensacao(temp, feelslike) {
         return feelslike["cold"];
     if (temp > 20 && temp <= 25)
         return feelslike["ok"];
-    if (temp > 25 && temp <= 30)
+    if (temp > 25 && temp <= 31)
         return feelslike["hot"];
     if (temp > 31)
         return feelslike["very hot"];
