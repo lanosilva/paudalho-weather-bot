@@ -33,7 +33,7 @@ setInterval(previsao, 86400000);// equivale há 24horas
 
 setInterval(dayTime, 86400000);// equivale há 24horas
 
-horaExata();
+//horaExata();
 dayTime();
 normal();
 previsao();
