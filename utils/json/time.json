@@ -1,5 +1,8 @@
 {
     "MORNING":"Bom dia 🌄",
+    "MID-DAY":"É meio dia 🕛",
     "AFTHERNOON":"Boa Tarde ☀️",
-    "NIGHT":"Boa Noite 🌇"
+    "MID-AFTHERNOON":"Fim de tarde 🌆",
+    "NIGHT":"Boa Noite 🌇",
+    "MID-NIGHT":"Boa Madrugada 🌉"
 }

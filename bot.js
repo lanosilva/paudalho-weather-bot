@@ -1,4 +1,3 @@
-
 console.log('bot started');
 var Twit = require('twit');
 var weather = require('weather-js');
@@ -9,8 +8,6 @@ var month = require('./utils/json/months.json');
 var dayWeek = require('./utils/json/dayweek.json');
 var prewords = require('./utils/json/prewords.json');
 require("dotenv").config();
-
-
 var T = new Twit({
     consumer_key: process.env.CONSUMER_KEY, // Aqui você coloca a sua chave da API
     consumer_secret: process.env.CONSUMER_SECRET, // Aqui você coloca a sua chave secreta da API
@@ -18,33 +15,23 @@ var T = new Twit({
     access_token_secret: process.env.ACCESS_TOKEN_SECRET, // Aqui você coloca a sua chave secreta do TOKEN
     timeout_ms: 60 * 1000
 });
-
 var cidade = 'Paudalho, PE';
 /* Acada 3 horas o bot manda um tweet informando a temperatura média daquele momento
  na cidade, com isso ele também mostra
  
  */
-
-
-
 setInterval(normal, 10800000); // equivale há 3 horas
-
-setInterval(previsao, 86400000);// equivale há 24horas
-
-setInterval(dayTime, 86400000);// equivale há 24horas
-
-//horaExata();
+// setInterval(previsao, 86400000);// equivale há 24horas
+setInterval(dayTime, 43200000);// equivale há 24horas
 dayTime();
 normal();
-previsao();
-
+// previsao();
 function normal() {
     procuratempo(cidade, false);
 }
-function previsao() {
-    procuratempo(cidade, true);
-}
-
+// function previsao() {
+//     procuratempo(cidade, true);
+// }
 function procuratempo(cidade, isForecast) {
     weather.find({ search: cidade, degreeType: 'C' }, function (err, result) {
         if (err) console.log(err);
@@ -56,7 +43,6 @@ function procuratempo(cidade, isForecast) {
         tweet(s);
     });
 }
-
 function tweet(text) {
 
     T.post('statuses/update', { status: text }, function (err, data, response) {
@@ -68,7 +54,6 @@ function tweet(text) {
         }
     });
 }
-
 function tratarCurrent(text) {
     var ou;
     if (outlook[text[0].current.skytext]) {
@@ -87,63 +72,29 @@ function tratarCurrent(text) {
 
     return mensagem;
 }
-
 function sensacao(temp, feelslike) {
-    if (temp < 16)
+    if (temp < 22)
         return feelslike["ultra cold"];
-    if (temp >= 16 && temp <= 20)
+    if (temp >= 22 && temp <= 26)
         return feelslike["very cold"];
-    if (temp >= 16 && temp <= 20)
+    if (temp >= 27 && temp <= 29)
         return feelslike["cold"];
-    if (temp > 20 && temp <= 25)
+    if (temp > 30 && temp <= 32)
         return feelslike["ok"];
-    if (temp > 25 && temp <= 31)
+    if (temp > 32 && temp <= 33)
         return feelslike["hot"];
-    if (temp > 31)
+    if (temp > 34)
         return feelslike["very hot"];
     if (temp > 35)
         return feelslike["ultra hot"];
 }
-
-
-function tratarForecast(data) {
-    var x = forecast(data);
-    var p = "0";
-    if (x.precip != '') {
-        p = x.precip;
-    }
-
-    var ou;
-    if (outlook[x.skytextday]) {
-        ou = outlook[x.skytextday].translate + " " + outlook[x.skytextday].emoji;
-    } else {
-        ou = x.skytextday;
-    }
-
-    var msg = 'Previsão para Hoje:\nMínima: ' + x.low + 'ºC\n' +
-        'Máxima: ' + x.high + 'ºC\n' +
-        'Aparência: ' + ou + '\n' +
-        'Chuva: ' + p + '%';
-    return msg;
-}
-function forecast(data) {
-    var today = new Date();
-    var date = today.getFullYear() + '-0' + (today.getMonth() + 1) + '-' + today.getDate();
-
-    for (i = 0; i < Object.keys(data[0].forecast).length; i++) {
-        if (data[0].forecast[i].date == date) {
-            return data[0].forecast[i];
-        }
-    }
-}
-
 function dayTime() {
     var today = new Date();
-    var dw = today.getDay();
-    var t = today.getHours();
-    var d = today.getDate();
-    var m = today.getMonth();
-    var y = today.getFullYear();
+    var dw = today.getUTCDay();
+    var t = (today.getUTCHours() - 3);
+    var d = (today.getUTCDate() - 1);
+    var m = today.getUTCMonth();
+    var y = today.getUTCFullYear();
     var hora;
     var mes;
 
@@ -183,12 +134,18 @@ function dayTime() {
         mes = month[12];
     }
 
-    if (t >= 8 && t < 15) {
+    if (t >= 6 && t < 11,59) {
         hora = timeday.MORNING;
-    } else if (t >= 15 && t < 21) {
+    } else if (t == 12) {
+        hora = timeday['MID-DAY'];
+    } else if (t >= 13 && t < 17,59) {
         hora = timeday.AFTHERNOON;
-    } else {
+    } else if (t == 18) {
+        hora = timeday['MID-AFTHERNOON'];
+    } else if (t > 18 && t < 23, 59) {
         hora = timeday.NIGHT;
+    } else if (t >= 0 && t <= 5,59) {
+        hora = timeday['MID-NIGHT'];
     }
 
     if (dw == 0) {
@@ -236,12 +193,35 @@ function dayTime() {
 
     return tweet(msg);
 }
+// function tratarForecast(data){
+//     var x = forecast(data);
+//     var p ="0";
+//     if(x.precip != ''){
+//         p = x.precip;
+//     }
 
-function horaExata() {
-    var today = new Date();
-    var hora = today.getHours();
-    var minuto = today.getMinutes();
-    var segundo = today.getSeconds();
-    var msg = hora + " " + minuto + " " + segundo
-    return tweet(msg);
-}
+//     var ou;
+//     if(outlook[x.skytextday]){
+//         ou = outlook[x.skytextday].translate + " " + outlook[x.skytextday].emoji;
+//     }else{
+//         ou = x.skytextday;
+//     }
+
+//     var msg = 'Previsão para hoje:\nMínima: ' + x.low +'ºC\n'+
+//                 'Máxima: '+x.high+'ºC\n'+
+//                 'Aparência: '+ ou+'\n'+
+//                 'Chuva: ' +p+ '%';
+//     return msg;
+// }
+
+
+// function forecast(data){
+//     var today = new Date();
+//     var date = today.getFullYear()+'-0'+(today.getMonth()+1)+'-'+today.getDate();
+
+//     for(i=0;i<Object.keys(data[0].forecast).length;i++){
+//         if(data[0].forecast[i].date == date){
+//             return data[0].forecast[i];
+//         }
+//     }
+// }
